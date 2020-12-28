@@ -4,11 +4,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Select, FormControl, MenuItem, makeStyles, InputLabel } from '@material-ui/core';
+import { Select, MenuItem } from '@material-ui/core';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+    // BrowserRouter as Router,
     Link
   } from "react-router-dom";
 
@@ -16,11 +14,11 @@ import {
 
 function Header() {
     return (
-        <div className='Header'>
+        <div className='Header' id='header'>
             {/*Logo*/}
             <Link to="/">
                 <div className='Header-logo'>
-                    <img src={"https://mikekitko.com/wp-content/uploads/2019/10/amazon-logo-white-768x232.png"} />
+                    <img src={"https://mikekitko.com/wp-content/uploads/2019/10/amazon-logo-white-768x232.png"} alt='Amazon logo' />
                 </div>
             </Link>
             {/*Address*/}
@@ -66,7 +64,7 @@ function Header() {
             </div>
             <div className='Header-language'>
                     <div className='Header-languageCard'>
-                        <img className='Header-languageLabel' src='https://icon-library.com/images/american-flag-icon/american-flag-icon-11.jpg' />
+                        <img className='Header-languageLabel' src='https://icon-library.com/images/american-flag-icon/american-flag-icon-11.jpg' alt='US flag' />
                         <ExpandMoreIcon className='nav-icon'/>
                     </div>
                     <Select>   
@@ -75,7 +73,7 @@ function Header() {
                         <MenuItem value=''>Español - ES</MenuItem>
                         <hr className='parts' />
                         <MenuItem value=''>
-                        <img className='Header-languageLabel' src='https://icon-library.com/images/american-flag-icon/american-flag-icon-11.jpg' style={{ width: '20px', marginRight: '10px'}} />
+                        <img className='Header-languageLabel' src='https://icon-library.com/images/american-flag-icon/american-flag-icon-11.jpg' alt='US flag' style={{ width: '20px', marginRight: '10px'}} />
                         <span>You are shopping on Amazon.com</span> </MenuItem>
                     </Select> 
                 </div>

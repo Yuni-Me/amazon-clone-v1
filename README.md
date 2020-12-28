@@ -1,8 +1,6 @@
 # Getting Started with Create React App
 
-# Getting Started with Create React App
-
-## plan.md
+## Plan
 
 Part 1: Implement the Header
 Part 2: Create Cart Page

@@ -1,15 +1,16 @@
-import logo from './logo.svg'
+// import logo from './logo.svg'
 import './App.css'
 import Header from './Header'
 import Home from './Home'
 import Cart from './Cart'
 import SubHeader from './SubHeader'
+import Footer from './Footer'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
           <Route path='/'>
             <Home />
           </Route>
-        </Switch>        
+        </Switch> 
+        <Footer />       
       </div>
     </Router>
   );

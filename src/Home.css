@@ -7,16 +7,13 @@
   height: 670px;
   background-size: cover;
   background-position: center;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0)
-  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 .Home-content {
-  margin-top: -360px;
+  margin-top: -390px;
 }
 .Home-row {
   display: flex;
   flex-wrap: wrap;
+  margin: 20px;
 }

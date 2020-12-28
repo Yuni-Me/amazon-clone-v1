@@ -1,16 +1,42 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import db from './firebase';
 import './Home.css'
 import Product from './Product'
+import Offer from './Offer'
 
 
 function Home() {
-    const getProducts = () => {
-        console.log("Get Products");
+
+    const [ products, setProducts ] = useState([]);
+
+    useEffect(() => {
         db.collection('products').onSnapshot((snapshot) => {
-            console.log(snapshot);
+            let tempProducts = []
+            snapshot.docs.map((doc)=>{
+                tempProducts.push({
+                    id: doc.id,
+                    product: doc.data()
+                })
+            })
+            setProducts(tempProducts);
         })
-    };
+    }, []);
+
+    const [ offers, setOffers ] = useState([]);
+
+    useEffect(() => {
+        db.collection('offers').onSnapshot((snapshot) => {
+            let tempOffers = []
+            snapshot.docs.map((doc)=>{
+                tempOffers.push({
+                    id: doc.id,
+                    offer: doc.data()
+                })
+            })
+            setOffers(tempOffers);
+        })
+    }, []);
+
     return (
         <div className='Home'>
             <div className='Home-container'>
@@ -19,18 +45,45 @@ function Home() {
                 </div>
                 <div className='Home-content'>
                     <div className='Home-row'>
-                        <Product />
-                        <Product />
+                    {
+                        offers.map((offer)=> (
+                            <Offer 
+                                key={offer.id}
+                                title={offer.offer.title}
+                                image={offer.offer.image}
+                                suggestion={offer.offer.suggestion}
+                                link={offer.offer.link}
+                            />
+                        ))
+                    }
                     </div>
                     <div className='Home-row'>
-                        <Product />
-                        <Product />
-                        <Product />
+                    {
+                        products.slice(0, 2).map((product)=> (
+                            <Product 
+                                key={product.id}
+                                title={product.product.title}
+                                price={product.product.price}
+                                rating={product.product.rating}
+                                image={product.product.image}
+                            />
+
+                        ))
+                    }
                     </div>
                     <div className='Home-row'>
-                        <Product />
-                        <Product />
-                        <Product />
+                    {
+                        products.slice(2, products.length).map((product)=> (
+                            <Product 
+                                key={product.id}
+                                title={product.product.title}
+                                price={product.product.price}
+                                rating={product.product.rating}
+                                image={product.product.image}
+                            />
+
+                        ))
+                    }
                     </div>
                 </div>
             </div>

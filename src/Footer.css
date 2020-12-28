@@ -1,0 +1,35 @@
+.Footer {
+  margin-top: 80px;
+}
+.Footer-alink {
+  background-color: rgb(55, 71, 90);
+  text-align: center;
+  padding: 20px;
+}
+.Footer-alink a {
+  background-color: rgb(55, 71, 90);
+  display: inline-block;
+  /* margin: 0 auto; */
+}
+.Footer-Accessibility {
+  height: 250px;
+  background-color: #232f3e;
+  /* margin: 0 auto; */
+}
+.Footer-logo {
+  text-align: center;
+}
+.Footer-logo img {
+  width: 100px;
+  margin-top: 100px;
+  /* margin-left: 20px; */
+}
+.Footer-Copyright {
+  background-color: #131a22;
+  color: #ddd;
+  padding: 40px;
+  text-align: center;
+}
+.Footer-Copyright span {
+  margin: 20px;
+}

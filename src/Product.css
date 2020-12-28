@@ -1,14 +1,14 @@
 .Product {
-  max-height: 400px;
+  height: 350px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
   background-color: white;
   z-index: 1;
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
-  min-width: 350px;
 }
 .Product-description {
   display: flex;
@@ -18,17 +18,19 @@
 
 .Product-rating {
   display: flex;
+  margin-bottom: 20px;
 }
 .Product img {
-  min-height: 200px;
-  max-height: 250px;
-  max-width: 150px;
+  max-height: 200px;
+  max-width: 200px;
+  margin-bottom: 10px;
 }
 .Product button {
-  margin: 8px;
+  margin-bottom: 8px;
   background-color: #f0c14b;
   width: 100px;
   height: 30px;
   border: 2px solid #a88734;
   border-radius: 3px;
+  margin-top: auto;
 }
