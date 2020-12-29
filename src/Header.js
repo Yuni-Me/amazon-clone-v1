@@ -6,13 +6,20 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Select, MenuItem } from '@material-ui/core';
 import {
-    // BrowserRouter as Router,
+    BrowserRouter as Router,
     Link
   } from "react-router-dom";
 
 
 
-function Header() {
+function Header(props) {
+    const getCount = () => {
+        let count = 0;
+        props.cartItems.forEach(item => {
+            count += item.cartItem.quantity
+        });
+        return count;
+    }
     return (
         <div className='Header' id='header'>
             {/*Logo*/}
@@ -92,7 +99,7 @@ function Header() {
                 <Link to="/cart">
                     <div className='Header-optionCart'>
                         <AddShoppingCartIcon style={{ fontSize: 35 }}/>
-                        <span className='Header-cartCount'>20</span>
+                        <span className='Header-cartCount'>{getCount()}</span>
                         <span className='Header-cartSign'>Cart</span>
                     </div>
                 </Link>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import db from './firebase';
+import { db } from './firebase';
 import './Home.css'
 import Product from './Product'
 import Offer from './Offer'
@@ -61,6 +61,7 @@ function Home() {
                     {
                         products.slice(0, 2).map((product)=> (
                             <Product 
+                                id={product.id}
                                 key={product.id}
                                 title={product.product.title}
                                 price={product.product.price}
@@ -75,6 +76,7 @@ function Home() {
                     {
                         products.slice(2, products.length).map((product)=> (
                             <Product 
+                                id={product.id}
                                 key={product.id}
                                 title={product.product.title}
                                 price={product.product.price}

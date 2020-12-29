@@ -4,12 +4,14 @@ import CartTotal from './CartTotal'
 import './Cart.css'
 
 
-function Cart() {
+function Cart(props) {
     
+    // const [ cartItem, setCartItem ] = useState();
+
     return (
         <div className='Cart'>
-            <CartItems />
-            <CartTotal />
+            <CartItems cartItems={props.cartItems}/>
+            <CartTotal cartItems={props.cartItems}/>
         </div>
     )
 }
